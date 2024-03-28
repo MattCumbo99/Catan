@@ -1,6 +1,6 @@
-import { MaterialEnum } from 'src/components/material-enum';
+import { MaterialEnum } from 'src/objects/material-enum';
 import * as rulesJson from '../assets/rules.json';
-import { DevCardEnum } from 'src/components/development-card';
+import { DevCardEnum } from 'src/objects/development-card';
 
 /**
  * A static class that reads information from `rules.json`.

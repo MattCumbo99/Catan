@@ -84,6 +84,10 @@ export class Bank extends Player {
         throw new Error("The bank cannot monopilize!");
     }
 
+    override getTotalDevCards(): number {
+        return this.devCards.length;
+    }
+
     private initializeMaterials(): void {
         const materials = new MaterialBundle(
             {

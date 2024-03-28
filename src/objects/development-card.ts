@@ -8,5 +8,9 @@ export class DevelopmentCard {
 }
 
 export enum DevCardEnum {
-    VictoryPoint, Monopoly, Knight, RoadBuilder, YearOfPlenty
+    VictoryPoint = "Victory Point", 
+    Monopoly = "Monopoly", 
+    Knight = "Knight", 
+    RoadBuilder = "Road Builder", 
+    YearOfPlenty = "Year of Plenty"
 }

@@ -5,7 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Catan</title>
 </head>
-<body>
-  
+<body style="padding-bottom: 15%;">
+  <h1>
+    Catan Test Mode
+  </h1>
+  <app-dice (resultRoll)="resultingRoll"></app-dice>
+  <app-logger></app-logger>
+  <br>
+  <app-bank [bank]="bank"></app-bank>
+  <mat-grid-list cols="2" style="padding: 15px;">
+    <mat-grid-tile>
+      <app-player-card [player]="player1"></app-player-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <app-player-card [player]="player2"></app-player-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <app-player-card [player]="player3"></app-player-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <app-player-card [player]="player4"></app-player-card>
+    </mat-grid-tile>
+  </mat-grid-list>
 </body>
 </html>

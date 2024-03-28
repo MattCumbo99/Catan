@@ -1,0 +1,9 @@
+<div>
+    <button #button1 [disabled]="clicked" (click)="rollDice()" class="dice-button">
+        <img src="{{ firstDiceImg }}" width="50" height="50">
+    </button>
+    <button #button2 [disabled]="clicked" (click)="rollDice()" class="dice-button">
+        <img src="{{ secondDiceImg }}" width="50" height="50">
+    </button>
+    <button mat-flat-button [disabled]="endTurnDisabled" (click)="endTurn()" color="primary">End Turn</button>
+</div>

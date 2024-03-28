@@ -93,6 +93,10 @@ export class Player {
         }
     }
 
+    getDevCard(devcard: DevCardEnum): number {
+        return this.devCardInventory.get(devcard)!;
+    }
+
     /**
      * Gets the total amount of victory points this player possesses.
      * 
@@ -240,7 +244,7 @@ export class Player {
      */
     getTotalDevCards(): number {
         let cardTotals = 0;
-        this.devCardInventory.forEach((__: DevCardEnum, total: number) => {
+        this.devCardInventory.forEach((total: number, devcard: DevCardEnum) => {
             cardTotals += total;
         });
         return cardTotals;

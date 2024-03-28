@@ -1,5 +1,5 @@
-import { MaterialBundle } from "src/components/material-bundle";
-import { MaterialEnum } from "src/components/material-enum";
+import { MaterialBundle } from "src/objects/material-bundle";
+import { MaterialEnum } from "src/objects/material-enum";
 
 export class ArrayUtils {
 

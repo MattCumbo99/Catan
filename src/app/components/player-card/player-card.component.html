@@ -1,0 +1,77 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Player: {{player.color}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-subtitle class="subtitle-padding">
+        <div *ngIf="!hidden; else opVp">
+            <mat-label>VP: {{victoryPoints(false)}}</mat-label>
+        </div>
+        <ng-template #opVp>
+            <mat-label>VP: {{victoryPoints(true)}}</mat-label>
+        </ng-template>
+        <div>
+            <mat-label>Knights Used: {{player.knights}}</mat-label>
+            <br>
+            <mat-label>Longest Road: {{player.longestRoadLength}}</mat-label>
+        </div>
+    </mat-card-subtitle>
+    <mat-card-content>
+        <hr>
+        <div *ngIf="!hidden; else opponent">
+            <mat-label>Wood: {{getWood()}}</mat-label>
+            <br>
+            <mat-label>Brick: {{getBrick()}}</mat-label>
+            <br>
+            <mat-label>Sheep: {{getSheep()}}</mat-label>
+            <br>
+            <mat-label>Wheat: {{getWheat()}}</mat-label>
+            <br>
+            <mat-label>Stone: {{getStone()}}</mat-label>
+        </div>
+        <ng-template #opponent>
+            <mat-label>Material Cards: {{player.getTotalMaterials()}}</mat-label>
+        </ng-template>
+        <hr>
+        <div *ngIf="!hidden; else opDev">
+            <mat-label>Knights: {{getKnights()}}</mat-label>
+            <br>
+            <mat-label>Victory Points: {{getVictoryPointCards()}}</mat-label>
+            <br>
+            <mat-label>Road Builders: {{getRoadBuilders()}}</mat-label>
+            <br>
+            <mat-label>Monopolies: {{getMonopolies()}}</mat-label>
+            <br>
+            <mat-label>Year of Plenty: {{getYearOfPlenties()}}</mat-label>
+        </div>
+        <ng-template #opDev>
+            <mat-label>Total Development Cards: {{player.getTotalDevCards()}}</mat-label>
+        </ng-template>
+        <hr>
+        <h2>Rolls</h2>
+        <form #rollForm="ngForm">
+            <mat-form-field>
+                <mat-label>Wood</mat-label>
+                <input matInput name="woodRolls" ngModel>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Brick</mat-label>
+                <input matInput name="brickRolls" ngModel>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Sheep</mat-label>
+                <input matInput name="sheepRolls" ngModel>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Wheat</mat-label>
+                <input matInput name="wheatRolls" ngModel>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Stone</mat-label>
+                <input matInput name="stoneRolls" ngModel>
+            </mat-form-field>
+        </form>
+    </mat-card-content>
+    <mat-card-actions>
+        <mat-checkbox [(ngModel)]="hidden">Hidden</mat-checkbox>
+    </mat-card-actions>
+</mat-card>

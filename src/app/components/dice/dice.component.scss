@@ -1,0 +1,10 @@
+.dice-button {
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.dice-button:disabled {
+    cursor: default;
+    color: gray;
+}
